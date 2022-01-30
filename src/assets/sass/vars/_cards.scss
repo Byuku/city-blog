@@ -31,7 +31,10 @@
     &-body {
       padding-top: 10px;
       text-align: center;
-      visibility: hidden;
+
+      @media screen and (min-width: $screen-md) {
+        visibility: hidden;
+      }
       
       p {
         font-weight: 100;
@@ -40,10 +43,13 @@
 
     &-header {
       text-align: center;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      
+      @media screen and (min-width: $screen-md) {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       h2 {
         font-weight: bold;
