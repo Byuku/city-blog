@@ -3,22 +3,27 @@
 @import "vars/variables";
 @import "vars/mixins";
 @import "vars/cards";
+@import "vars/blog";
 
 body {
   margin: 0;
 }
 
-.main {
+.bg-light-purple {
   background-color: $light-purple;
-  font-family: 'Roboto', sans-serif;
-  padding: 2rem;
-  
-  @media screen and (min-width: $screen-md-min) {
-    padding: 5rem 0;
-  }
 }
 
 .container {
+  margin: 0 auto;
+  padding: 0 30px;
+  
+  @media screen and (min-width: $screen-sm-min) {
+    max-width: $screen-md;
+    width: 100%;
+  }
+}
+
+.grid-container {
     display: grid;
     gap: $row-gap $col-gap;
     grid-template-columns: minmax(0, 1fr); 
@@ -37,4 +42,13 @@ body {
       padding: 5em 0;
       width: $screen-md;
     }
+}
+
+.main {
+  font-family: 'Roboto', sans-serif;
+  padding: 2rem;
+}
+
+.p-off {
+  padding: 0;
 }

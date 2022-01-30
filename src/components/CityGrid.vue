@@ -1,18 +1,12 @@
 <template>
-  <div class="main">
-    <div class="container">
+  <div class="main bg-light-purple">
+    <div class="grid-container">
       <div
         v-for="city in cities"
         :key="city.id"
         class="card"
         :class="'card-' + city.id"
       >
-        <!-- <div class="card-image">
-          <figure>
-            <img :src="getImgURL(city.imgSrc)" alt="valtech image" />
-          </figure>
-        </div> -->
-
         <div class="card-box">
           <div class="card-header">
             <small>{{ city.subtitle }}</small>
@@ -22,7 +16,7 @@
           <div class="card-body">
             <p>{{ city.text }}</p>
 
-            <button @click="exploreMoreBtn()" class="btn">Explore More</button>
+            <button @click="exploreMoreBtn(city.id)" class="btn">Explore More</button>
           </div>
         </div>
       </div>
@@ -44,12 +38,9 @@ export default {
     },
   },
   methods: {
-    exploreMoreBtn() {
-      this.$router.push({ name: "Informations" });
+    exploreMoreBtn(cityId) {
+      this.$router.push({ name: "Informations", params: { cityId }});
     },
-    // getImgURL: (imgUrl) => {
-    //   return require("@/assets/img/" + imgUrl );
-    // }
   },
   mounted() {
     this.$store.dispatch("getCitiesDataAction");
