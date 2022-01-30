@@ -16,7 +16,9 @@
           <div class="card-body">
             <p>{{ city.text }}</p>
 
-            <button @click="exploreMoreBtn(city.id)" class="btn">Explore More</button>
+            <button @click="exploreMoreBtn(city.id)" class="btn">
+              Explore More
+            </button>
           </div>
         </div>
       </div>
@@ -28,18 +30,16 @@
 export default {
   name: "CityGrid",
   data() {
-    return {
-      
-    };
+    return {};
   },
   computed: {
-    cities () {
+    cities() {
       return this.$store.getters.getCities;
     },
   },
   methods: {
     exploreMoreBtn(cityId) {
-      this.$router.push({ name: "Informations", params: { cityId }});
+      this.$router.push({ name: "Informations", params: { cityId } });
     },
   },
   mounted() {

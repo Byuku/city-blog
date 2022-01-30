@@ -3,14 +3,17 @@
     <div class="blog">
       <div class="hero">
         <div class="hero-image">
-          <!-- <figure>
-              <img :src="require(`@/assets/img/` + city.imgSrc)" :alt="city.title" />
-            </figure> -->
+          <figure>
+            <img src="@/assets/img/valtech.jpeg" :alt="city.title" />
+            <!-- <img :src="getImgURL(city.imgSrc)" :alt="city.title" /> -->
+          </figure>
         </div>
 
         <div class="hero-heading">
-          <h3>{{ city.subtitle }}</h3>
-          <h1>{{ city.title }}</h1>
+          <div class="hero-heading-box">
+            <h3>{{ city.subtitle }}</h3>
+            <h1>{{ city.title }}</h1>
+          </div>
         </div>
       </div>
 
@@ -48,19 +51,17 @@ export default {
     },
   },
   methods: {
-    // getImgURL: (imgUrl) => {
-    //   console.log("METHODE IMG URL", imgUrl)
-    //   return require("@/assets/img/" + imgUrl );
+    // getImgURL(imgUrl) {
+    //   return require('@/assets/img/' + imgUrl);
     // },
     backToHome() {
-      this.$router.push({ name: "Home" })
+      this.$router.push({ name: "Home" });
     },
     getCity() {
       axios
         .get("/cities.json")
         .then((response) => {
           this.city = response.data.find((item) => item.id == this.cityId);
-          console.log(this.city);
         })
         .catch((error) => {
           console.log("Informations.vue - getCity error", error);

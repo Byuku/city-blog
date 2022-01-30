@@ -15,7 +15,6 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 0 30px;
   
   @media screen and (min-width: $screen-sm-min) {
     max-width: $screen-md;
