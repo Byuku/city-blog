@@ -1,5 +1,8 @@
 # city-blog
 
+Page templating for a technical test.
+Using Vuejs (vue-cli, vuex, vue-router) and Sass (dart-sass)
+
 ## Project setup
 ```
 npm install

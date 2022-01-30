@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import CityGrid from "@/components/CityGrid.vue";
 
 export default {
