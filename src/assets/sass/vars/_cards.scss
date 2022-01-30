@@ -1,0 +1,85 @@
+
+.card {
+    background-color: $white;
+    border-radius: 8px;
+    display: grid;
+    padding: 2rem;
+
+    &:hover {
+      .card-header {
+        transform: translateY(10px);
+      }
+      
+      .card-body {
+        
+      }
+    }
+
+    button {
+      @include btn($white);
+    }
+
+    &-box {
+      color: $white;
+      margin: auto;
+    }
+
+    &-body {
+      padding-top: 10px;
+      text-align: center;
+      
+      p {
+        font-weight: 100;
+      }
+    }
+
+    &-header {
+      text-align: center;
+      transition: all 300ms;
+
+      h2 {
+        font-weight: bold;
+        margin: 5px 0 0;
+        text-transform: uppercase;
+      }
+      
+      small {
+        font-weight: 100;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    &-image {
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    
+    &-1 {
+      @media screen and (min-width: $screen-sm) {
+        grid-column: 1 / -1;
+        grid-row: span 3;
+      }
+      
+      @media screen and (min-width: $screen-md) {
+        grid-row: span 3;
+      }
+    }
+  
+    &-2 {
+      @media screen and (min-width: $screen-md) {
+        grid-column: span 2;  
+      }
+    }
+  
+    &-7 {
+      @media screen and (min-width: $screen-md) {
+        grid-column: span 2;  
+      }
+    }
+  
+    @include row-span(2, "&", 2, 7);
+    @include set-background-img("&");
+  }

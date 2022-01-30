@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+@import "vars/variables";
+@import "vars/mixins";
+@import "vars/cards";
+
+body {
+  margin: 0;
+}
+
+.main {
+  background-color: $light-purple;
+  font-family: 'Roboto', sans-serif;
+  padding: 2rem;
+  
+  @media screen and (min-width: $screen-md-min) {
+    padding: 5rem 0;
+  }
+}
+
+.container {
+    display: grid;
+    gap: $row-gap $col-gap;
+    grid-template-columns: minmax(0, 1fr); 
+    grid-template-rows: repeat(7, 1fr);
+    margin: 0 auto;
+    padding: 2em 0;
+    width: 100%;
+  
+    @media screen and (min-width: $screen-sm-min) {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: repeat(7, minmax(10em, auto)); 
+    }
+    
+    @media screen and (min-width: $screen-md-min) {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 5em 0;
+      width: $screen-md;
+    }
+}

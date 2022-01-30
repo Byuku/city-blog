@@ -1,0 +1,52 @@
+
+// Mixins
+@mixin row-span($valueSpan: 1, $selector, $start, $end) {
+  @for $i from $start through $end {
+    #{$selector}-#{$i}  {
+      @media screen and (min-width: $screen-md-min) {
+        grid-row: span $valueSpan;
+      }
+    }
+  }
+}
+
+// Btn
+@mixin btn($color: $white) {
+  background-color: transparent;
+  border: 1px solid $color;
+  border-radius: 8px;;
+  color: $color;
+  font-size: 13px;
+  margin-top: 15px;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  
+  &:hover, &:focus {
+    background-color: darken($color, 20%);
+    border: 1px solid darken($color, 20%);
+    color: $color;
+    cursor: pointer;
+  }
+}
+
+// Bg-images
+$images: (
+  "1": "valtech.jpeg",
+  "2": "venice.jpeg",
+  "3": "berlin.jpg",
+  "4": "barcelona.jpeg",
+  "5": "paris.jpeg",
+  "6": "amsterdam.jpeg",
+  "7": "london.jpeg",
+);
+
+@mixin set-background-img($selector) {
+  @each $key, $image in $images {
+    #{$selector}-#{$key} {
+      background: linear-gradient( rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5)), url('~@/assets/img/#{$image}');
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
