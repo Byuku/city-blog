@@ -1,5 +1,5 @@
 <template>
-  <div class="main bg-light-purple">
+  <div class="main">
     <div class="grid-container">
       <div
         v-for="city in cities"

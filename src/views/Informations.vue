@@ -4,7 +4,7 @@
       <div class="hero">
         <div class="hero-image">
           <figure>
-            <img :src="getImgURL(city.imgSrc)" :alt="city.title" />
+            <img :src="getImg(city.img)" :alt="city.title" />
           </figure>
         </div>
 
@@ -50,8 +50,10 @@ export default {
     },
   },
   methods: {
-    getImgUrl(img) {
-      return require(`../assets/img/${img}`);
+    getImg(img) {
+      if (img != undefined) {
+        return require(`../assets/img/${img}`);
+      }
     },
     backToHome() {
       this.$router.push({ name: "Home" });

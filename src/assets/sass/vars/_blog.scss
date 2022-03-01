@@ -17,7 +17,7 @@
             padding: 30px;
 
             @media screen and (min-width: $screen-md-min) {
-                font-size: 25px;
+                font-size: 18px;
                 line-height: 2;
                 margin-top: 6rem;
                 padding-top: 0;
@@ -37,7 +37,7 @@
     }
 
     @media screen and (min-width: $screen-md-min) {
-        grid-template-rows: minmax(0, 450px);
+        grid-template-rows: minmax(0, 400px);
     }
 
     &-image {
@@ -46,6 +46,7 @@
 
         figure {
             margin: 0;
+            max-height: 400px;
         }
 
         img {
