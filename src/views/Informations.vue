@@ -4,8 +4,7 @@
       <div class="hero">
         <div class="hero-image">
           <figure>
-            <img src="@/assets/img/valtech.jpeg" :alt="city.title" />
-            <!-- <img :src="getImgURL(city.imgSrc)" :alt="city.title" /> -->
+            <img :src="getImgURL(city.imgSrc)" :alt="city.title" />
           </figure>
         </div>
 
@@ -51,9 +50,9 @@ export default {
     },
   },
   methods: {
-    // getImgURL(imgUrl) {
-    //   return require('@/assets/img/' + imgUrl);
-    // },
+    getImgUrl(img) {
+      return require(`../assets/img/${img}`);
+    },
     backToHome() {
       this.$router.push({ name: "Home" });
     },
