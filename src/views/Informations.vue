@@ -39,6 +39,7 @@ export default {
   data() {
     return {
       city: Object,
+      baseUrl: process.env.VUE_APP_BASE_URL,
     };
   },
   props: {
@@ -60,7 +61,7 @@ export default {
     },
     getCity() {
       axios
-        .get("/cities.json")
+        .get(this.baseUrl + 'cities.json')
         .then((response) => {
           this.city = response.data.find((item) => item.id == this.cityId);
         })
@@ -69,7 +70,7 @@ export default {
         });
     },
   },
-  mounted() {
+  created(){
     this.getCity();
   },
 };
